@@ -1,72 +1,98 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Body from '../assets/images/final_body.png';
-import organsMappingPc from '../assets/mapping_pc.json';
-import organsMappingMobile from '../assets/mapping_mobile.json';
-import organsMappingTablet from '../assets/mapping_tablet.json';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
+import ImageMap from "./ImageMap";
 
-const ImageMap = () => {
-  const navigate = useNavigate();
-  
-  // State to store the current organsMapping based on screen size
-  const [organsMapping, setOrgansMapping] = useState(organsMappingMobile);
-
-  // Function to handle area clicks
-  const handleAreaClick = (path) => {
-    navigate(path);
-  };
-
-  useEffect(() => {
-    const updateOrgansMapping = () => {
-      const width = window.innerWidth;
-
-      if (width >= 1024) { // lg breakpoint (>= 1024px)
-        setOrgansMapping(organsMappingPc);
-      } else if (width >= 768) { // md breakpoint (>= 768px)
-        setOrgansMapping(organsMappingTablet);
-      } else { // mobile
-        setOrgansMapping(organsMappingMobile);
-      }
-    };
-
-    updateOrgansMapping(); // Run initially
-
-    // Listen for window resize to update organsMapping dynamically
-    window.addEventListener('resize', updateOrgansMapping);
-
-    // Cleanup listener on component unmount
-    return () => {
-      window.removeEventListener('resize', updateOrgansMapping);
-    };
-  }, []); // Empty dependency array so this runs only on mount/unmount
+function CustomTabPanel(props) {
+  const { children, value, index, ...other } = props;
 
   return (
-    <div>
-      <div
-        style={{ maxHeight: '100vh' }}
-        className="body flex justify-center items-center py-6">
-        <img
-          className="w-[374px] md:w-[492px] lg:w-[633px]"
-          src={Body} // Replace with your image URL
-          alt="Image Map"
-          useMap="#image-map"
-        />
-        <map name="image-map">
-          {/* Define clickable areas */}
-          {organsMapping.map((organ, index) => (
-            <area
-              key={index}
-              alt={organ.title}
-              title={organ.title}
-              onClick={() => handleAreaClick(organ.route)}
-              shape={organ.shape}
-              coords={organ.coords}
-            />
-          ))}
-        </map>
-      </div>
+    <div
+      role="tabpanel"
+      hidden={value !== index}
+      id={`simple-tabpanel-${index}`}
+      aria-labelledby={`simple-tab-${index}`}
+      {...other}
+    >
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
+}
+
+CustomTabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
-export default ImageMap;
+function a11yProps(index) {
+  return {
+    id: `simple-tab-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
+  };
+}
+
+export default function HumanModel() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <Box sx={{ width: "100%", mt: 2, display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <Box
+        sx={{
+          borderBottom: 1,
+          borderColor: "divider",
+          width: "fit-content",
+          borderRadius: "12px",
+          backgroundColor: "#f8f9fa", // Light gray background
+          p: 1,
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)", // Soft shadow
+        }}
+      >
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="styled tabs"
+          sx={{
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#007bff", // Blue indicator color
+              height: "4px",
+              borderRadius: "5px",
+            },
+            "& .MuiTab-root": {
+              textTransform: "none",
+              fontSize: "16px",
+              fontWeight: 500,
+              color: "#555",
+              transition: "0.3s",
+              "&:hover": {
+                color: "#007bff",
+              },
+              "&.Mui-selected": {
+                color: "#007bff",
+                fontWeight: "bold",
+              },
+            },
+          }}
+        >
+          <Tab
+            sx={{ fontFamily: 'Harmattan, sans-serif', fontSize: '30px !important' }} label="المجسم" {...a11yProps(0)} />
+          <Tab
+            sx={{ fontFamily: 'Harmattan, sans-serif', fontSize: '30px !important' }}  label="الأعضاء منفصلة" {...a11yProps(1)} />
+        </Tabs>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        <ImageMap />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        tablet
+      </CustomTabPanel>
+    </Box>
+  );
+}
+
