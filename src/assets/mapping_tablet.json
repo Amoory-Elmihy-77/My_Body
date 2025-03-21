@@ -1,5 +1,11 @@
 [
     {
+        "title": "الفم",
+        "coords": "434,275,37",
+        "shape": "circle",
+        "route": "/mouth"
+    },
+    {
         "title": "العين",
         "coords": "70,229,45",
         "shape": "circle",
@@ -15,7 +21,7 @@
         "title": "الرئتين",
         "coords": "50,358,46",
         "shape": "circle",
-        "route": "/langs"
+        "route": "/lungs"
     },
     {
         "title": "القلب",
@@ -36,6 +42,12 @@
         "route": "/kidneys"
     },
     {
+        "title": "الكبد",
+        "coords": "144,590,42",
+        "shape": "circle",
+        "route": "/liver"
+    },
+    {
         "title": "الطحال",
         "coords": "60,533,51",
         "shape": "circle",
@@ -46,17 +58,5 @@
         "coords": "378,525,446,621",
         "shape": "rect",
         "route": "/intestines"
-    },
-    {
-        "title": "الكبد",
-        "coords": "144,590,42",
-        "shape": "circle",
-        "route": "/liver"
-    },
-    {
-        "title": "الفم",
-        "coords": "434,275,37",
-        "shape": "circle",
-        "route": "/mouth"
     }
 ]
