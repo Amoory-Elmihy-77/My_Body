@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 
 
-import Body from '../assets/images/final_body_pc.png';
+// import Body from '../assets/images/final_body_pc.png';
 
 export default function OrgansCards(){
     const navigate = useNavigate();
@@ -20,12 +20,12 @@ export default function OrgansCards(){
             <div className="cards flex flex-wrap justify-center gap-6 p-6 mx-auto max-w-7xl font-[Harmattan, sans-serif]">
                 {
                     organsMappingPc.map((organ, index) => (
-                        <Card key={index} sx={{ maxWidth: 345 }} className="rounded-lg shadow-lg transition-transform duration-1000 ease-in-out transform hover:scale-105 hover:shadow-2xl">
+                        <Card key={index} sx={{ maxWidth: 345, padding: 3 }} className="rounded-lg shadow-lg transition-transform duration-1000 ease-in-out transform hover:scale-105 hover:shadow-2xl">
                             <CardMedia
+                                sx={{ width: "300px", height: "300px", objectFit: "contain" }}
                                 component="img"
                                 alt={organ.title}
-                                height="140"
-                                image={Body}
+                                image={organ.image}
                                 className="rounded-t-lg"
                             />
                             <CardContent>
