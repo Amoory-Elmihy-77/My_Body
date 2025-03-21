@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import ImageMap from "./ImageMap";
+import OrgansCards from "./OrgansCards";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -81,16 +82,26 @@ export default function HumanModel() {
           }}
         >
           <Tab
-            sx={{ fontFamily: 'Harmattan, sans-serif', fontSize: '30px !important' }} label="المجسم" {...a11yProps(0)} />
+            sx={{
+              fontFamily: 'Harmattan, sans-serif', fontSize: {
+                sm: '23px !important',
+                md: '30px !important',
+              }
+            }} label="المجسم" {...a11yProps(0)} />
           <Tab
-            sx={{ fontFamily: 'Harmattan, sans-serif', fontSize: '30px !important' }}  label="الأعضاء منفصلة" {...a11yProps(1)} />
+            sx={{
+              fontFamily: 'Harmattan, sans-serif', fontSize: {
+                sm: '23px !important',
+                md: '30px !important',
+              }
+            }} label="الأعضاء منفصلة" {...a11yProps(1)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
         <ImageMap />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        tablet
+        <OrgansCards />
       </CustomTabPanel>
     </Box>
   );
