@@ -3,7 +3,7 @@ import organsMapping from "./assets/mapping_pc.json";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HumanModel from "./Components/HumanModel";
 import "@fontsource/harmattan";
-import Heart from "./Pages/Heart";
+import Organ from "./Pages/Organ";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<HumanModel />} />
                 {organsMapping.map((organ, index) => (
-                    <Route key={index} path={organ.route} element={<Heart />} />
+                    <Route key={index} path={organ.route} element={<Organ details={organ} />} />
                 ))}
             </Routes>
         </Router>

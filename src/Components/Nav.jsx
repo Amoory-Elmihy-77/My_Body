@@ -5,10 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import HeartLogo from '/organs/heart.png';
 
 
-export default function Nav() {
+export default function Nav({logo, title}) {
 
     return (
         <>
@@ -17,7 +16,7 @@ export default function Nav() {
                 <Container maxWidth="xl">
                     <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                            <Avatar sx={{ width: 56, height: 56 }} alt="Heart" src={HeartLogo} />
+                            <Avatar sx={{ width: 56, height: 56 }} alt="Heart" src={logo} />
                             <Typography
                                 variant="h3"
                                 sx={{
@@ -29,7 +28,7 @@ export default function Nav() {
                                     fontFamily: 'Harmattan, sans-serif',
                                 }}
                             >
-                                القلب
+                                {title}
                             </Typography>
                         </Box>
                     </Toolbar>

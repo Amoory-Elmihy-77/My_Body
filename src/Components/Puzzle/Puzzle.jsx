@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-import img from "../../assets/images/final_body_xs.png";
+import React, { useRef, useState } from 'react';
 import { JigsawPuzzle } from "react-jigsaw-puzzle/lib";
 import "react-jigsaw-puzzle/lib/jigsaw-puzzle.css";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import excellentSound from "../../assets/excellent.mp3";
 import "./puzzle.css";
 
-export default function Puzzle() {
+export default function Puzzle({puzzleImage}) {
     const [isSolved, setIsSolved] = useState(false);
     const [key, setKey] = useState(Date.now());
+    const audioRef = useRef(new Audio(excellentSound));
 
     const set = () => {
         setIsSolved(true);
+        audioRef.current.play();
     };
 
     const closeMessage = () => {
@@ -22,19 +24,13 @@ export default function Puzzle() {
         setKey(Date.now());
     };
 
-    const handleClickOutside = (e) => {
-        const successMessage = e.target.closest('.solved-message');
-        if (!successMessage) {
-            setIsSolved(false);
-        }
-    };
 
     return (
         <>
             {/* Reset the JigsawPuzzle component by changing its key */}
             <JigsawPuzzle
                 key={key}
-                imageSrc={img}
+                imageSrc={puzzleImage}
                 rows={3}
                 columns={3}
                 onSolved={set}
@@ -45,7 +41,6 @@ export default function Puzzle() {
             {isSolved && (
                 <div
                     className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-semibold rounded-lg shadow-lg animate__animated animate__fadeIn animate__delay-1s solved-message"
-                    onClick={handleClickOutside}
                 >
                     <div className="flex justify-between items-center bg-green-100 text-green-800 p-3 rounded-lg shadow-lg">
                         <span className="text-lg font-semibold">شطووور 👏👏👏</span>

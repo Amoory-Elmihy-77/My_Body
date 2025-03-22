@@ -35,7 +35,7 @@ function a11yProps(index) {
     'aria-controls': `simple-tabpanel-${index}`,
   };
 }
-export default function Heart() {
+export default function Oragn({details}) {
     const [value, setValue] = React.useState(0);
     
     const handleChange = (event, newValue) => {
@@ -45,7 +45,7 @@ export default function Heart() {
     
     return (
         <div>
-            <Nav />
+            <Nav logo={details.image} title={details.title} />
             <Box sx={{ width: "100%", mt: 2, display: "flex", flexDirection: "column", alignItems: "center" }}>
                 <Box
                     sx={{
@@ -114,7 +114,7 @@ export default function Heart() {
                     <h1>اختبر نفسك</h1>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
-                    <Puzzle />
+                    <Puzzle puzzleImage={details.image} />
                 </CustomTabPanel>
             </Box>
         </div>
