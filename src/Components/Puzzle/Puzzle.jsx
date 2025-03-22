@@ -40,9 +40,9 @@ export default function Puzzle({puzzleImage}) {
             {/* Success message container with Tailwind */}
             {isSolved && (
                 <div
-                    className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-semibold rounded-lg shadow-lg animate__animated animate__fadeIn animate__delay-1s solved-message"
+                    className="w-[80%] xs:w-fit fixed top-1/5 sm:top-2/9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-semibold rounded-lg shadow-lg animate__animated animate__fadeIn animate__delay-1s solved-message"
                 >
-                    <div className="flex justify-between items-center bg-green-100 text-green-800 p-3 rounded-lg shadow-lg">
+                    <div className="flex justify-around items-center bg-green-100 text-green-800 p-3 rounded-lg shadow-lg">
                         <span className="text-lg font-semibold">شطووور 👏👏👏</span>
                         <button
                             className="p-1 rounded-full text-green-800 hover:text-red-500 transition duration-300"

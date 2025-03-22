@@ -114,7 +114,7 @@ export default function Oragn({details}) {
                     <h1>اختبر نفسك</h1>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
-                    <Puzzle puzzleImage={details.image} />
+                    <Puzzle puzzleImage={details.puzzleImage} />
                 </CustomTabPanel>
             </Box>
         </div>
