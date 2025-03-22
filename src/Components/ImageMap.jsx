@@ -4,6 +4,7 @@ import Body from '../assets/images/final_body.png';
 import organsMappingPc from '../assets/mapping_pc.json';
 import organsMappingMobile from '../assets/mapping_mobile.json';
 import organsMappingTablet from '../assets/mapping_tablet.json';
+import organsMappingXs from '../assets/mapping_xs.json';
 
 const ImageMap = () => {
     const navigate = useNavigate();
@@ -24,8 +25,10 @@ const ImageMap = () => {
                 setOrgansMapping(organsMappingPc);
             } else if (width >= 768) { // md breakpoint (>= 768px)
                 setOrgansMapping(organsMappingTablet);
-            } else { // mobile
+            } else if (width >= 375) { // mobile
                 setOrgansMapping(organsMappingMobile);
+            }else{
+                setOrgansMapping(organsMappingXs);
             }
         };
 
@@ -45,7 +48,7 @@ const ImageMap = () => {
             style={{ maxHeight: '100vh' }}
             className="body flex justify-center items-center py-6">
             <img
-                className="w-[374px] md:w-[492px] lg:w-[633px]"
+                className=" min-w-[320px] sm:w-[374px] md:w-[492px] lg:w-[633px]"
                 src={Body} // Replace with your image URL
                 alt="Image Map"
                 useMap="#image-map"

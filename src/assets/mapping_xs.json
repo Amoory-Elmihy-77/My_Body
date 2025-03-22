@@ -1,0 +1,62 @@
+[
+    {
+        "title": "الفم",
+        "coords": "280,177,24",
+        "shape": "circle",
+        "route": "/mouth"
+    },
+    {
+        "title": "العين",
+        "coords": "47,146,32",
+        "shape": "circle",
+        "route": "/eye"
+    },
+    {
+        "title": "المخ",
+        "coords": "283,121,31",
+        "shape": "circle",
+        "route": "/brain"
+    },
+    {
+        "title": "الرئتين",
+        "coords": "32,232,32",
+        "shape": "circle",
+        "route": "/lungs"
+    },
+    {
+        "title": "القلب",
+        "coords": "294,232,34",
+        "shape": "circle",
+        "route": "/heart"
+    },
+    {
+        "title": "المعدة",
+        "coords": "252,280,29",
+        "shape": "circle",
+        "route": "/stomach"
+    },
+    {
+        "title": "الكليتين",
+        "coords": "76,281,32",
+        "shape": "circle",
+        "route": "/kidneys"
+    },
+    {
+        "title": "الكبد",
+        "coords": "92,380,30",
+        "shape": "circle",
+        "route": "/liver"
+    },
+    {
+        "title": "الطحال",
+        "coords": "33,345,35",
+        "shape": "circle",
+        "route": "/spleen"
+    },
+    {
+        "title": "الأمعاء",
+        "coords": "245,340,292,404",
+        "shape": "rect",
+        "route": "/intestines"
+    }
+]
