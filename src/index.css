@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme{
+    --breakpoint-sm: 560px;
+    --breakpoint-xs: 425px;
+}
 
 *{
     box-sizing: border-box !important;

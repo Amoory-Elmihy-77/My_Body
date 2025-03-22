@@ -23,9 +23,9 @@ const ImageMap = () => {
 
             if (width >= 1024) { // lg breakpoint (>= 1024px)
                 setOrgansMapping(organsMappingPc);
-            } else if (width >= 768) { // md breakpoint (>= 768px)
+            } else if (width >= 560) { // md breakpoint (>= 768px)
                 setOrgansMapping(organsMappingTablet);
-            } else if (width >= 375) { // mobile
+            } else if (width >= 425) { // mobile
                 setOrgansMapping(organsMappingMobile);
             }else{
                 setOrgansMapping(organsMappingXs);
@@ -48,7 +48,7 @@ const ImageMap = () => {
             style={{ maxHeight: '100vh' }}
             className="body flex justify-center items-center py-6">
             <img
-                className=" min-w-[320px] sm:w-[374px] md:w-[492px] lg:w-[633px]"
+                className=" min-w-[320px] w-[320px] xs:w-[374px] sm:w-[492px] lg:w-[633px]"
                 src={Body} // Replace with your image URL
                 alt="Image Map"
                 useMap="#image-map"
