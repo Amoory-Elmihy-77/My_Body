@@ -6,6 +6,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Questions from '../Components/Questions/Questions';
+import OrganDetails from '../Components/OrganDetails/OrganDetails';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -109,7 +110,7 @@ export default function Oragn({details}) {
                     </Tabs>
                 </Box>
                 <CustomTabPanel value={value} index={0}>
-                    <h1>تفاصيل العضو</h1>
+                    <OrganDetails details={details} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
                     <Questions questions={details.questions} />

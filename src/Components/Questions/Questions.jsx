@@ -73,7 +73,11 @@ export default function Questions({ questions }) {
         setSelectedAnswers({});
         setScore(null);
         setQuestionsIndexes(getRandomUniqueNumbers());
-        setShowCorrectAnswer({}); // Reset show correct answers state
+        setShowCorrectAnswer({});// Reset show correct answers state
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
 
     return (

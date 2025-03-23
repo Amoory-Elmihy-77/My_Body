@@ -6,7 +6,15 @@
         "route": "/mouth",
         "image": "/organs/mouth.png",
         "puzzleImage": "/puzzleImages/mouth.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "العين",
@@ -15,7 +23,15 @@
         "route": "/eye",
         "image": "/organs/eye.png",
         "puzzleImage": "/puzzleImages/eye.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "المخ",
@@ -24,7 +40,15 @@
         "route": "/brain",
         "image": "/organs/brain.png",
         "puzzleImage": "/puzzleImages/brain.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "الرئتين",
@@ -33,7 +57,15 @@
         "route": "/lungs",
         "image": "/organs/lungs.png",
         "puzzleImage": "/puzzleImages/lungs.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "القلب",
@@ -42,7 +74,15 @@
         "route": "/heart",
         "image": "/organs/heart.png",
         "puzzleImage": "/puzzleImages/heart.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "المعدة",
@@ -51,7 +91,15 @@
         "route": "/stomach",
         "image": "/organs/stomach.png",
         "puzzleImage": "/puzzleImages/stomach.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "الكليتين",
@@ -60,7 +108,15 @@
         "route": "/kidneys",
         "image": "/organs/kidneys.png",
         "puzzleImage": "/puzzleImages/kidneys.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "الكبد",
@@ -69,7 +125,15 @@
         "route": "/liver",
         "image": "/organs/liver.png",
         "puzzleImage": "/puzzleImages/liver.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "الطحال",
@@ -78,7 +142,15 @@
         "route": "/spleen",
         "image": "/organs/spleen.png",
         "puzzleImage": "/puzzleImages/spleen.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     },
     {
         "title": "الأمعاء",
@@ -87,6 +159,14 @@
         "route": "/intestines",
         "image": "/organs/intestines.png",
         "puzzleImage": "/puzzleImages/intestines.jpg",
-        "questions": "/organQuestions/heart.json"
+        "questions": "/organQuestions/heart.json",
+        "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
+        "youtubeVideo": "https://www.youtube.com/watch?v=pIPV1n2A9LI&pp=ygUUaGVhcnQgb3JnYW4gZm9yIGtpZHM%3D",
+        "audio": "/organsAudio/excellent.mp3",
+        "tips": [
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
+            "الطريقة الأولى للحفاظ على العضو بشكل سليم."
+        ]
     }
 ]
