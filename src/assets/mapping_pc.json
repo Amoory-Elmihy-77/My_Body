@@ -5,7 +5,8 @@
         "shape": "poly",
         "route": "/mouth",
         "image": "/organs/mouth.png",
-        "puzzleImage": "/puzzleImages/mouth.jpg"
+        "puzzleImage": "/puzzleImages/mouth.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "العين",
@@ -13,7 +14,8 @@
         "shape": "poly",
         "route": "/eye",
         "image": "/organs/eye.png",
-        "puzzleImage": "/puzzleImages/eye.jpg"
+        "puzzleImage": "/puzzleImages/eye.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "المخ",
@@ -21,7 +23,8 @@
         "shape": "poly",
         "route": "/brain",
         "image": "/organs/brain.png",
-        "puzzleImage": "/puzzleImages/brain.jpg"
+        "puzzleImage": "/puzzleImages/brain.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "الرئتين",
@@ -29,7 +32,8 @@
         "shape": "poly",
         "route": "/lungs",
         "image": "/organs/lungs.png",
-        "puzzleImage": "/puzzleImages/lungs.jpg"
+        "puzzleImage": "/puzzleImages/lungs.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "القلب",
@@ -37,7 +41,8 @@
         "shape": "poly",
         "route": "/heart",
         "image": "/organs/heart.png",
-        "puzzleImage": "/puzzleImages/heart.jpg"
+        "puzzleImage": "/puzzleImages/heart.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "المعدة",
@@ -45,7 +50,8 @@
         "shape": "poly",
         "route": "/stomach",
         "image": "/organs/stomach.png",
-        "puzzleImage": "/puzzleImages/stomach.jpg"
+        "puzzleImage": "/puzzleImages/stomach.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "الكليتين",
@@ -53,7 +59,8 @@
         "shape": "poly",
         "route": "/kidneys",
         "image": "/organs/kidneys.png",
-        "puzzleImage": "/puzzleImages/kidneys.jpg"
+        "puzzleImage": "/puzzleImages/kidneys.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "الكبد",
@@ -61,7 +68,8 @@
         "shape": "poly",
         "route": "/liver",
         "image": "/organs/liver.png",
-        "puzzleImage": "/puzzleImages/liver.jpg"
+        "puzzleImage": "/puzzleImages/liver.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "الطحال",
@@ -69,7 +77,8 @@
         "shape": "poly",
         "route": "/spleen",
         "image": "/organs/spleen.png",
-        "puzzleImage": "/puzzleImages/spleen.jpg"
+        "puzzleImage": "/puzzleImages/spleen.jpg",
+        "questions": "/organQuestions/heart.json"
     },
     {
         "title": "الأمعاء",
@@ -77,6 +86,7 @@
         "shape": "poly",
         "route": "/intestines",
         "image": "/organs/intestines.png",
-        "puzzleImage": "/puzzleImages/intestines.jpg"
+        "puzzleImage": "/puzzleImages/intestines.jpg",
+        "questions": "/organQuestions/heart.json"
     }
 ]

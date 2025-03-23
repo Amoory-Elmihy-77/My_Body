@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import Questions from '../Components/Questions/Questions';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -111,7 +112,7 @@ export default function Oragn({details}) {
                     <h1>تفاصيل العضو</h1>
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    <h1>اختبر نفسك</h1>
+                    <Questions questions={details.questions} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
                     <Puzzle puzzleImage={details.puzzleImage} />
