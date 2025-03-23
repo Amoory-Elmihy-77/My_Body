@@ -4,7 +4,7 @@ export default function OrganDetails({ details }) {
     return (
         <div className="max-w-4xl flex flex-col md:flex-row items-center gap-6 border-2 border-[#007bff] mx-auto p-6 bg-white rounded-lg shadow-xl transition-transform transform hover:scale-[1.015] hover:shadow-2xl">
             {/* Card Header with image */}
-            <div className="relative w-fit h-fit mb-6">
+            <div className="relative w-fit h-fit">
                 <img
                     src={details.puzzleImage}
                     alt={details.title}
@@ -23,12 +23,12 @@ export default function OrganDetails({ details }) {
                     </p>
                 </div>
 
-                {/* YouTube Video */}
+                {/* Video */}
                 <div className="mb-6">
                     <iframe
                         width="100%"
                         height="400"
-                        src={details.youtubeVideo}
+                        src={details.video}
                         frameBorder="0"
                         allowFullScreen
                         className="rounded-lg shadow-lg border-2 border-red-600"

@@ -7,6 +7,8 @@ import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Questions from '../Components/Questions/Questions';
 import OrganDetails from '../Components/OrganDetails/OrganDetails';
+import { Link } from 'react-router-dom';
+import { Button } from '@mui/material';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -118,6 +120,9 @@ export default function Oragn({details}) {
                 <CustomTabPanel value={value} index={2}>
                     <Puzzle puzzleImage={details.puzzleImage} />
                 </CustomTabPanel>
+                <Link to="/" className='mb-4'>
+                    <Button variant="contained" color="primary" sx={{fontFamily: 'Harmattan, sans-serif'}}>الرجوع للصفحة الرئيسية</Button>
+                </Link>
             </Box>
         </div>
     )
