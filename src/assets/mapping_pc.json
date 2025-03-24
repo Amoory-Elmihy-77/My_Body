@@ -1,5 +1,4 @@
-[
-    {
+[{
         "title": "الفم",
         "coords": "558,314,569,312,576,316,586,326,592,336,583,352,574,361,564,365,569,370,575,376,576,385,559,393,547,394,551,402,547,385,552,369,544,364,534,356,525,349,520,341,518,332,524,325,530,319,539,314,546,312",
         "shape": "poly",
@@ -8,7 +7,7 @@
         "puzzleImage": "/puzzleImages/mouth.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/mouth.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -25,7 +24,7 @@
         "puzzleImage": "/puzzleImages/eye.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/eye.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -42,7 +41,7 @@
         "puzzleImage": "/puzzleImages/brain.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/brain.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -59,7 +58,7 @@
         "puzzleImage": "/puzzleImages/lungs.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/lungs.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -76,7 +75,7 @@
         "puzzleImage": "/puzzleImages/heart.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/heart.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -93,7 +92,7 @@
         "puzzleImage": "/puzzleImages/stomach.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/stomach.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -127,7 +126,7 @@
         "puzzleImage": "/puzzleImages/liver.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/liver.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -144,7 +143,7 @@
         "puzzleImage": "/puzzleImages/spleen.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/spleen.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
@@ -161,7 +160,7 @@
         "puzzleImage": "/puzzleImages/intestines.jpg",
         "questions": "/organQuestions/heart.json",
         "description": "هنا يمكنك إضافة وصف صغير للعضو. هذا النص يشرح قليلاً عن العضو. وصف مميز وشامل للمزيد من التفاصيل حول العضو.",
-        "video": "/organVideos/kidneys.mp4",
+        "video": "/organVideos/intestines.mp4",
         "audio": "/organsAudio/excellent.mp3",
         "tips": [
             "الطريقة الأولى للحفاظ على العضو بشكل سليم.",
