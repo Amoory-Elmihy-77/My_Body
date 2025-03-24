@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import excellentSound from "../../assets/excellent.mp3";
-// import wrongAnswerSound from "../../assets/wrong.mp3";
+import wrongAnswerSound from "../../assets/wrong.mp3";
 
 const getRandomUniqueNumbers = () => {
     const numbers = [...Array(10).keys()];
@@ -14,7 +14,7 @@ const getRandomUniqueNumbers = () => {
 
 export default function Questions({ questions }) {
     const correctAudio = useRef(new Audio(excellentSound));
-    const wrongAudio = useRef(new Audio(excellentSound)); // Reference for wrong answer sound
+    const wrongAudio = useRef(new Audio(wrongAnswerSound)); // Reference for wrong answer sound
     const [allQuestions, setAllQuestions] = useState([]);
     const [selectedAnswers, setSelectedAnswers] = useState({});
     const [score, setScore] = useState(null);
