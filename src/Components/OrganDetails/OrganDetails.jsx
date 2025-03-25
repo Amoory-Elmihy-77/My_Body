@@ -16,11 +16,11 @@ export default function OrganDetails({ details }) {
         const stopAudio = () => {
             if (audio1Ref.current) {
                 audio1Ref.current.pause();
-                audio1Ref.current.currentTime = 0;
+                // audio1Ref.current.currentTime = 0;
             }
             if (audio2Ref.current) {
                 audio2Ref.current.pause();
-                audio2Ref.current.currentTime = 0;
+                // audio2Ref.current.currentTime = 0;
             }
         };
 
@@ -51,13 +51,13 @@ export default function OrganDetails({ details }) {
                 // Check if user is at the top of the page
                 else if (scrollTop === 0) {
                     videoRef.current.pause();
-                    videoRef.current.currentTime = 0;
+                    // videoRef.current.currentTime = 0;
                     playAudioSequence();
                 }
                 // If user is in the middle, pause everything
                 else {
                     videoRef.current.pause();
-                    videoRef.current.currentTime = 0;
+                    // videoRef.current.currentTime = 0;
                     stopAudio();
                 }
             }
