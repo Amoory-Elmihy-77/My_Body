@@ -31,8 +31,8 @@ export default function Puzzle({puzzleImage}) {
             <JigsawPuzzle
                 key={key}
                 imageSrc={puzzleImage}
-                rows={3}
-                columns={3}
+                rows={2}
+                columns={2}
                 onSolved={set}
                 className="jigsaw-puzzle"
             />
