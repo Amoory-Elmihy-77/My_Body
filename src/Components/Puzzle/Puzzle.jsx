@@ -35,6 +35,7 @@ export default function Puzzle({puzzleImage}) {
                 columns={2}
                 onSolved={set}
                 className="jigsaw-puzzle"
+                style={{ '--bg-img': `url(${puzzleImage})` }}
             />
 
             {/* Success message container with Tailwind */}

@@ -23,6 +23,7 @@ export default function Questions({ questions }) {
 
     useEffect(() => {
         if (questions) {
+            // console.log("Fetching questions from:", questions);
             fetch(questions)
                 .then((response) => response.json())
                 .then((data) => setAllQuestions(data))
