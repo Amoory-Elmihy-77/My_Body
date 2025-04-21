@@ -34,6 +34,12 @@ export default function OrganDetails({ details }) {
     return (
         <div className="max-w-4xl flex flex-col items-center gap-6 border-2 border-[#007bff] mx-auto p-6 bg-white rounded-lg shadow-xl transition-transform transform hover:scale-[1.015] hover:shadow-2xl">
             
+            {/* Title */}
+            <div className="text-center w-full">
+                <h1 className="text-4xl font-bold text-[#007bff] mb-2">{details.title}</h1>
+                <div className="w-24 h-1 bg-[#007bff] mx-auto rounded-full"></div>
+            </div>
+            
             {/* Video */}
             <div className="mt-8">
                 <video
