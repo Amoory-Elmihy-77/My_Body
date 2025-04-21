@@ -48,12 +48,6 @@
         "route": "/liver"
     },
     {
-        "title": "الطحال",
-        "coords": "60,533,51",
-        "shape": "circle",
-        "route": "/spleen"
-    },
-    {
         "title": "الأمعاء",
         "coords": "378,525,446,621",
         "shape": "rect",
