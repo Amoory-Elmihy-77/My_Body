@@ -41,13 +41,12 @@ export default function OrganDetails({ details }) {
             </div>
             
             {/* Video */}
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center">
                 <video
                     ref={videoRef}
-                    width="100%"
                     height="300"
                     controls
-                    className="rounded-lg shadow-lg border-2 border-red-600"
+                    className="rounded-lg shadow-lg border-2 border-red-600 w-[100%] md:w-[70%]"
                 >
                     <source src={details.video} type="video/mp4" />
                     متصفحك لا يدعم عنصر الفيديو.
@@ -64,7 +63,7 @@ export default function OrganDetails({ details }) {
 
                 {/* Tips for Care */}
                 <div>
-                    <p className="text-gray-800 text-lg font-semibold mb-4">نصائح للحفاظ على العضو:</p>
+                    <p className="text-gray-800 text-lg font-semibold mb-4">عشان تحافظ عليا:</p>
                     <ul className="list-inside list-disc text-gray-700 space-y-3 text-lg">
                         {details.tips.map((tip, index) => <li key={index}>{tip}</li>)}
                     </ul>
