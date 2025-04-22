@@ -143,7 +143,7 @@
         "image": "/organs/intestines.png",
         "puzzleImage": "/puzzleImages/intestines.jpg",
         "questions": "/organQuestions/intestines.json",
-        "description": "الأمعاء هي جزء من جسمنا جوه البطن. هي اللي بتساعد في هضم الأكل وامتصاص الفيتامينات والماء اللي الجسم محتاجهم.",
+        "description": "الأمعاء هي جزء من جسمنا جوه البطن. هي اللي بتساعد في هضم الأكل وتاخد منه الحاجات المفيدة اللي تخلي جسمك قوي.",
         "video": "/organVideos/intestines.mp4",
         "audio": "/organsAudio/intestines.mp3",
         "tips": [
