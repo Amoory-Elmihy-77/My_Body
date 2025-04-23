@@ -1,63 +1,227 @@
-.jigsaw-puzzle {
-    width: 25%;
-    height: 38%;
-    border: 2px solid black;
-    margin: 50px auto;
-    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.25);
-    background-color: #fff;
-    /* background-image: url('../../assets/images/final_body.png');
-    background-size: cover; */
-    position: relative;
+.puzzle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
-.jigsaw-puzzle::before {
-    content: '';
+
+.puzzle-container {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    box-shadow: 0 5px 10px 2px rgba(0, 0, 0, 0.25);
+    background-color: #f0f0f0;
+    touch-action: none;
+    user-select: none;
+    overflow: hidden;
+}
+
+.puzzle-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* background-image: url('../../assets/images/final_body.png'); */
-    background-size: cover;
-    opacity: 0.5;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 1;
 }
 
-/* For screens smaller than 1200px (large devices like tablets) */
-@media screen and (max-width: 1200px) {
-    .jigsaw-puzzle {
-        width: 40%;
-        height: 50%;
+.puzzle-piece {
+    position: absolute;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    z-index: 2;
+    background-repeat: no-repeat;
+}
+
+.puzzle-piece:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.puzzle-piece:active {
+    cursor: grabbing;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.success-message {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #d1fae5;
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.success-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #065f46;
+}
+
+.close-button {
+    padding: 4px;
+    border-radius: 50%;
+    color: #065f46;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    color: #dc2626;
+    transform: scale(1.1);
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+.new-game-button {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.25rem;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.new-game-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
     }
 }
 
-/* For screens smaller than 992px (medium devices like tablets in portrait mode) */
-@media screen and (max-width: 992px) {
-    .jigsaw-puzzle {
-        width: 50%;
-        height: 60%;
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .puzzle-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .puzzle-piece {
+        width: 200px;
+        height: 200px;
+    }
+
+    .pieces-container {
+        min-height: calc(200px + 40px);
+        gap: 12px;
+    }
+
+    .success-text {
+        font-size: 1.3rem;
     }
 }
 
-/* For screens smaller than 768px (tablets and large phones) */
 @media screen and (max-width: 768px) {
-    .jigsaw-puzzle {
-        width: 60%;
-        height: 70%;
+    .puzzle-container {
+        width: 320px;
+        height: 320px;
+    }
+
+    .puzzle-piece {
+        width: 160px;
+        height: 160px;
+    }
+
+    .pieces-container {
+        min-height: calc(160px + 40px);
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .success-text {
+        font-size: 1.25rem;
+    }
+
+    .new-game-button {
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
 }
 
-/* For screens smaller than 576px (small phones) */
-@media screen and (max-width: 576px) {
-    .jigsaw-puzzle {
-        width: 80%;
-        height: 80%;
+@media screen and (max-width: 480px) {
+    .puzzle-container {
+        width: 280px;
+        height: 280px;
+    }
+
+    .puzzle-piece {
+        width: 140px;
+        height: 140px;
+    }
+
+    .pieces-container {
+        min-height: calc(140px + 30px);
+        gap: 8px;
+        padding: 12px;
+    }
+
+    .success-text {
+        font-size: 1.1rem;
+    }
+
+    .new-game-button {
+        font-size: 1rem;
+        padding: 8px 16px;
     }
 }
 
-/* For extra-small screens (really small phones) */
-@media screen and (max-width: 400px) {
-    .jigsaw-puzzle {
-        width: 90%;
-        height: 90%;
+@media screen and (max-width: 360px) {
+    .puzzle-container {
+        width: 240px;
+        height: 240px;
+    }
+
+    .puzzle-piece {
+        width: 120px;
+        height: 120px;
+    }
+
+    .pieces-container {
+        min-height: calc(120px + 24px);
+        gap: 6px;
+        padding: 10px;
+    }
+
+    .success-content {
+        padding: 12px 20px;
+    }
+
+    .success-text {
+        font-size: 1rem;
     }
 }
 
