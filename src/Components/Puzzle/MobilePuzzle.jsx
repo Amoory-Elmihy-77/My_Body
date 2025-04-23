@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import excellentSound from "../../assets/excellent.mp3";
-import "./puzzle.css";
+import "./mobile-puzzle.css";
 
-export default function Puzzle({puzzleImage}) {
+export default function MobilePuzzle({puzzleImage}) {
     // State
     const [pieces, setPieces] = useState([]);
     const [isSolved, setIsSolved] = useState(false);
     const [draggedPiece, setDraggedPiece] = useState(null);
     const [userInteracted, setUserInteracted] = useState(false);
+    const [touchTarget, setTouchTarget] = useState(null);
     const audioRef = useRef(new Audio(excellentSound));
     
     // Refs for touch drag tracking
@@ -84,22 +85,7 @@ export default function Puzzle({puzzleImage}) {
         setDraggedPiece(null);
     };
 
-    // Desktop Drag and Drop handlers
-    const handleDragStart = (e, pieceId) => {
-        e.dataTransfer.setData('piece', pieceId.toString());
-    };
-
-    const handleDrop = (e, targetPos) => {
-        e.preventDefault();
-        const draggedPieceId = parseInt(e.dataTransfer.getData('piece'));
-        movePiece(draggedPieceId, targetPos);
-    };
-
-    const handleDragOver = (e) => {
-        e.preventDefault();
-    };
-
-    // Mobile touch handlers - using a different approach without preventDefault
+    // Enhanced Mobile touch handlers
     const handleTouchStart = (e, pieceId, pieceElem) => {
         if (isSolved) return;
         
@@ -139,7 +125,8 @@ export default function Puzzle({puzzleImage}) {
     };
 
     const handleTouchMove = (e) => {
-        // Don't call preventDefault() here to avoid the passive event listener error
+        e.preventDefault(); // Prevent scrolling while dragging
+        
         if (!touchDragRef.current.active || !ghostElemRef.current) return;
         
         const touch = e.touches[0];
@@ -163,7 +150,8 @@ export default function Puzzle({puzzleImage}) {
     };
 
     const handleTouchEnd = (e) => {
-        // Don't call preventDefault() here to avoid the passive event listener error
+        e.preventDefault();
+        
         if (!touchDragRef.current.active) return;
         
         // Hide ghost element
@@ -224,16 +212,9 @@ export default function Puzzle({puzzleImage}) {
             setIsSolved(true);
             // Only try to play sound if user has interacted with the page
             if (userInteracted) {
-                try {
-                    const playPromise = audioRef.current.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            console.log('Audio playback failed:', error);
-                            // Don't show error to user, just log it
-                        });
-                    }
-                } catch (error) {
-                    console.log('Audio playback error:', error);
+                const playPromise = audioRef.current.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => console.log('Audio playback failed:', error));
                 }
             }
         }
@@ -250,11 +231,9 @@ export default function Puzzle({puzzleImage}) {
             key={piece.id}
             className={`w-full h-full ${isSolved ? '' : 'rounded'} ${draggedPiece === piece.id ? 'opacity-50' : ''} transition-opacity duration-150`}
             draggable={!isSolved}
-            onDragStart={(e) => handleDragStart(e, piece.id)}
             ref={elem => {
                 // Store reference to the element for touch handling
                 if (elem) {
-                    // Use non-passive event listeners for touch events
                     elem.ontouchstart = (e) => handleTouchStart(e, piece.id, elem);
                 }
             }}
@@ -292,8 +271,6 @@ export default function Puzzle({puzzleImage}) {
                             key={position}
                             data-position={position}
                             className={`grid-cell ${isSolved ? '' : 'border border-dashed border-gray-400'} transition-all duration-200`}
-                            onDragOver={handleDragOver}
-                            onDrop={(e) => handleDrop(e, position)}
                         >
                             {pieces.map(piece =>
                                 piece.currentPos === position ? renderPiece(piece) : null
@@ -341,4 +318,4 @@ export default function Puzzle({puzzleImage}) {
             </button>
         </div>
     );
-}
+} 

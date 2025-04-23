@@ -1,0 +1,88 @@
+/* Mobile Puzzle Styles */
+.ghost-piece {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.8;
+    transform: translate(-50%, -50%);
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease-out;
+}
+
+.grid-cell {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.grid-cell.drop-highlight {
+    background-color: rgba(59, 130, 246, 0.2);
+    border: 2px dashed #3b82f6 !important;
+    transform: scale(1.05);
+}
+
+/* Success message animation */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.success-text {
+    font-weight: bold;
+    color: #10b981;
+    text-align: center;
+}
+
+.close-button {
+    background-color: #f3f4f6;
+    border-radius: 50%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.close-button:hover {
+    background-color: #e5e7eb;
+    transform: scale(1.1);
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Touch feedback styles */
+@media (hover: none) and (pointer: coarse) {
+    .grid-cell:active {
+        background-color: rgba(59, 130, 246, 0.1);
+    }
+    
+    button:active {
+        transform: scale(0.95);
+    }
+} 
