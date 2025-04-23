@@ -7,12 +7,26 @@ export default function Puzzle({puzzleImage}) {
     // State
     const [pieces, setPieces] = useState([]);
     const [isSolved, setIsSolved] = useState(false);
+    const [draggedPiece, setDraggedPiece] = useState(null);
+    const [userInteracted, setUserInteracted] = useState(false);
     const audioRef = useRef(new Audio(excellentSound));
 
     // Initialize puzzle
     useEffect(() => {
         initializePuzzle();
         audioRef.current.load();
+        
+        // Add a listener for any user interaction
+        const markUserInteracted = () => setUserInteracted(true);
+        document.addEventListener('mousedown', markUserInteracted);
+        document.addEventListener('touchstart', markUserInteracted, { passive: true });
+        document.addEventListener('keydown', markUserInteracted);
+        
+        return () => {
+            document.removeEventListener('mousedown', markUserInteracted);
+            document.removeEventListener('touchstart', markUserInteracted);
+            document.removeEventListener('keydown', markUserInteracted);
+        };
     }, []);
 
     const initializePuzzle = () => {
@@ -37,9 +51,10 @@ export default function Puzzle({puzzleImage}) {
 
         // All pieces start in the pieces container
         setPieces(initialPieces);
+        setDraggedPiece(null);
     };
 
-    // Drag and Drop handlers
+    // Desktop Drag and Drop handlers
     const handleDragStart = (e, pieceId) => {
         e.dataTransfer.setData('piece', pieceId.toString());
     };
@@ -47,6 +62,44 @@ export default function Puzzle({puzzleImage}) {
     const handleDrop = (e, targetPos) => {
         e.preventDefault();
         const draggedPieceId = parseInt(e.dataTransfer.getData('piece'));
+        movePiece(draggedPieceId, targetPos);
+    };
+
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    // Mobile touch handlers - using a different approach without preventDefault
+    const handleTouchStart = (e, pieceId) => {
+        // Don't use preventDefault here - it causes the error in passive listeners
+        setDraggedPiece(pieceId);
+    };
+
+    // Track touch position
+    const [touchTarget, setTouchTarget] = useState(null);
+    
+    const handleTouchMove = (e) => {
+        // Find what element is under the touch point
+        const touch = e.touches[0];
+        const elemBelow = document.elementFromPoint(touch.clientX, touch.clientY);
+        
+        // Find the closest grid cell
+        const gridCell = elemBelow?.closest('.grid-cell');
+        if (gridCell) {
+            setTouchTarget(parseInt(gridCell.dataset.position));
+        }
+    };
+
+    const handleTouchEnd = (e) => {
+        if (draggedPiece !== null && touchTarget !== null) {
+            movePiece(draggedPiece, touchTarget);
+        }
+        setDraggedPiece(null);
+        setTouchTarget(null);
+    };
+
+    // Common piece movement logic
+    const movePiece = (draggedPieceId, targetPos) => {
         const draggedPiece = pieces.find(p => p.id === draggedPieceId);
         const targetPiece = pieces.find(p => p.currentPos === targetPos);
 
@@ -66,18 +119,17 @@ export default function Puzzle({puzzleImage}) {
         checkWinCondition(newPieces);
     };
 
-    const handleDragOver = (e) => {
-        e.preventDefault();
-    };
-
     // Game logic
     const checkWinCondition = (currentPieces) => {
         const isWin = currentPieces.every(piece => piece.currentPos === piece.correctPos);
         if (isWin && !isSolved) {
             setIsSolved(true);
-            const playPromise = audioRef.current.play();
-            if (playPromise !== undefined) {
-                playPromise.catch(error => console.log('Audio playback failed:', error));
+            // Only try to play sound if user has interacted with the page
+            if (userInteracted) {
+                const playPromise = audioRef.current.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => console.log('Audio playback failed:', error));
+                }
             }
         }
     };
@@ -91,9 +143,11 @@ export default function Puzzle({puzzleImage}) {
     const renderPiece = (piece) => (
         <div
             key={piece.id}
-            className={`w-full h-full ${isSolved ? '' : 'rounded'}`}
+            className={`w-full h-full ${isSolved ? '' : 'rounded'} ${draggedPiece === piece.id ? 'opacity-50' : ''}`}
             draggable={!isSolved}
             onDragStart={(e) => handleDragStart(e, piece.id)}
+            onTouchStart={(e) => handleTouchStart(e, piece.id)}
+            onTouchMove={handleTouchMove}
             style={{
                 backgroundImage: `url(${puzzleImage})`,
                 backgroundSize: '200% 200%',
@@ -104,7 +158,10 @@ export default function Puzzle({puzzleImage}) {
     );
 
     return (
-        <div className="flex flex-col items-center p-4 max-w-lg mx-auto">
+        <div 
+            className="flex flex-col items-center p-4 max-w-lg mx-auto"
+            onTouchEnd={handleTouchEnd}
+        >
             {/* Puzzle Board with background hint */}
             <div className="relative w-64 h-64 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] border-4 border-gray-800 mb-6">
                 {/* Background image with low opacity */}
@@ -121,7 +178,8 @@ export default function Puzzle({puzzleImage}) {
                     {[1, 0, 3, 2].map(position => (
                         <div
                             key={position}
-                            className={`${isSolved ? '' : 'border border-dashed border-gray-400'}`}
+                            data-position={position}
+                            className={`grid-cell ${isSolved ? '' : 'border border-dashed border-gray-400'}`}
                             onDragOver={handleDragOver}
                             onDrop={(e) => handleDrop(e, position)}
                         >
@@ -134,7 +192,10 @@ export default function Puzzle({puzzleImage}) {
             </div>
 
             {/* Pieces Container */}
-            <div className={`bg-gray-200 p-2.5 rounded flex justify-center gap-4 mb-6 transition-opacity duration-500 ${isSolved ? 'opacity-0' : 'opacity-100'}`}>
+            <div 
+                className={`bg-gray-200 p-2.5 rounded flex justify-center gap-4 mb-6 transition-opacity duration-500 ${isSolved ? 'opacity-0' : 'opacity-100'}`}
+                data-position="null"
+            >
                 {pieces
                     .filter(piece => piece.currentPos === null)
                     .map(piece => (
