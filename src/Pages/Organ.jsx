@@ -115,7 +115,7 @@ export default function Oragn({details}) {
                     <OrganDetails details={details} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={1}>
-                    <Questions questions={details.questions} />
+                    <Questions questions={details.questions} organImage={details.image} />
                 </CustomTabPanel>
                 <CustomTabPanel value={value} index={2}>
                     <Puzzle puzzleImage={details.puzzleImage} />

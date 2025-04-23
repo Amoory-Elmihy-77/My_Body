@@ -12,7 +12,7 @@ import wrongAnswerSound from "../../assets/wrong.mp3";
 //     return numbers.slice(0, 4).sort((a, b) => a - b);
 // };
 
-export default function Questions({ questions }) {
+export default function Questions({ questions, organImage }) {
     const correctAudio = useRef(new Audio(excellentSound));
     const wrongAudio = useRef(new Audio(wrongAnswerSound));
     const [allQuestions, setAllQuestions] = useState([]);
@@ -82,6 +82,17 @@ export default function Questions({ questions }) {
 
     return (
         <div className="max-w-4xl mx-auto mt-8 p-6 bg-gray-100 shadow-lg rounded-xl">
+            {/* Organ Image */}
+            {organImage && (
+                <div className="flex justify-center mb-8">
+                    <img 
+                        src={organImage} 
+                        alt="Organ" 
+                        className="w-32 h-32 object-contain rounded-lg shadow-md"
+                    />
+                </div>
+            )}
+            
             {allQuestions.map((question, index) => {
                 // Remove the questionIndexes check to show all questions
                 return (
